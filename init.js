@@ -22,6 +22,7 @@ function init () {
 
 function start() {
   var displays = navigator.getVRDisplays();
+  console.log(displays.length);
   if(displays.length >= 1) {
     init();
   }
