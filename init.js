@@ -1,3 +1,5 @@
+const scene = document.querySelector('a-scene');
+
 function replace(scene) {
   const replacableDiv = document.getElementById('replace');
   replacableDiv.parentNode.removeChild(replacableDiv);
@@ -8,25 +10,14 @@ function replace(scene) {
   scene.appendChild(box);
 }
 
-
 function init () {
-  const scene = document.querySelector('a-scene');
   replace(scene);
-  document.body.appendChild(scene);
 }
 
-window.addEventListener('vrdisplayactivate', function () {
-  console.log("reached");
+scene.addEventListener('enter-vr', function () {
   init();
 });
 
-// function start() {
-//   var displays = navigator.getVRDisplays();
-//   console.log(displays.length);
-//   if(displays.length >= 1) {
-//     init();
-//   }
-//
-// }
-
-// start();
+scene.addEventListener('exit-vr', function () {
+  location.reload();
+})
