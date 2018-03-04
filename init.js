@@ -15,6 +15,17 @@ function init () {
   document.body.appendChild(scene);
 }
 
-window.addEventListener('vrdisplayactivate', function () {
-  init();
-});
+// window.addEventListener('vrdisplayactivate', function () {
+//   console.log("reached");
+//   init();
+// });
+
+function start() {
+  var displays = navigator.getVRDisplays();
+  if(displays.length >= 1) {
+    init();
+  }
+
+}
+
+start();
