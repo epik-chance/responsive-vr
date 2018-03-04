@@ -10,23 +10,23 @@ function replace(scene) {
 
 
 function init () {
-  const scene = document.createElement('a-scene');
+  const scene = document.querySelector('a-scene');
   replace(scene);
   document.body.appendChild(scene);
 }
 
-// window.addEventListener('vrdisplayactivate', function () {
-//   console.log("reached");
-//   init();
-// });
+window.addEventListener('vrdisplayactivate', function () {
+  console.log("reached");
+  init();
+});
 
-function start() {
-  var displays = navigator.getVRDisplays();
-  console.log(displays.length);
-  if(displays.length >= 1) {
-    init();
-  }
+// function start() {
+//   var displays = navigator.getVRDisplays();
+//   console.log(displays.length);
+//   if(displays.length >= 1) {
+//     init();
+//   }
+//
+// }
 
-}
-
-start();
+// start();
