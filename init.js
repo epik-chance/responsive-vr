@@ -1,23 +1,41 @@
-const scene = document.querySelector('a-scene');
+let twoDimensional;
+let baseScene = document.querySelector('a-scene');
 
 function replace(scene) {
   const replacableDiv = document.getElementById('replace');
+  const text = document.createElement('a-text');
+  text.setAttribute('value', replacableDiv.textContent);
+  text.setAttribute('color', '#4CC3D9');
+  text.setAttribute('position', {x: -1, y: 0.5, z: -3});
+
   replacableDiv.parentNode.removeChild(replacableDiv);
-  const box = document.createElement('a-box');
-  box.setAttribute('position', {x: -1, y: 0.5, z: -3});
-  box.setAttribute('rotation', {x: 0, y: 45, z: 0});
-  box.setAttribute('color', '#4CC3D9');
-  scene.appendChild(box);
+  scene.appendChild(text);
 }
 
 function init () {
+  const scene = document.querySelector('a-scene');
   replace(scene);
 }
 
-scene.addEventListener('enter-vr', function () {
+function resetScene () {
+  const scene = document.querySelector('a-scene');
+  scene.addEventListener('enter-vr', function () {
+    twoDimensional = document.body.innerHTML;
+    init();
+  });
+
+  scene.addEventListener('exit-vr', function () {
+    document.body.innerHTML = twoDimensional;
+    resetScene();
+  })
+}
+
+baseScene.addEventListener('enter-vr', function () {
+  twoDimensional = document.body.innerHTML;
   init();
 });
 
-scene.addEventListener('exit-vr', function () {
-  location.reload();
+baseScene.addEventListener('exit-vr', function () {
+  document.body.innerHTML = twoDimensional;
+  resetScene();
 })
