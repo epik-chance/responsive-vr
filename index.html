@@ -4,11 +4,15 @@
     <meta charset="utf-8">
     <title>Responsive VR with A-Frame</title>
     <meta name="description" content="Responsive VR">
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <div id="replace"> Something </div>
-    <a-scene>
+    <div class="title-bar">
+      <h1>Responsive VR</h1>
+    </div>
+
+    <a-scene class="overlayScene hide">
     </a-scene>
     <script src="./init.js"></script>
   </body>

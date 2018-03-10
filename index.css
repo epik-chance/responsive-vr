@@ -1,0 +1,28 @@
+.title-bar {
+  color: darkblue;
+  text-align: center;
+  background: wheat;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.hide {
+display: none;
+}
+
+.overlayScene {
+  position: absolute;
+  top: 0;
+}
