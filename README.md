@@ -7,3 +7,6 @@ A demonstration of one possibility of Responsive VR.  In this method, we replace
 Clicking the title bar will launch VR mode.
 
 Text and color of the title can be changed using the provided form, and this change will be reflected in the VR version as well.
+
+
+#### [Demo](https://epik-chance.github.io/responsive-vr/)
