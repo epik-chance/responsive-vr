@@ -9,9 +9,20 @@
   </head>
   <body>
     <div class="title-bar">
-      <h1>Responsive VR</h1>
+      <h1 id="title-text">Responsive VR</h1>
     </div>
-
+    <div style="padding: 5%;">
+      <p>
+        A demonstration of one method for responsive VR. Clicking on the Title Bar (highlighted above)
+        will launch the app in VR mode. Changing the text using the input fields below
+        will reflect in the VR mode as well.
+      </p>
+      Enter new text: <input type="text" id="newText" value="...">
+      <br>
+      Select new text color: <input type="color" id="titleColor">
+      <br>
+      <button onclick="changeText()">Change Text</button>
+    </div>
     <a-scene class="overlayScene hide">
     </a-scene>
 

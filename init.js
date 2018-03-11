@@ -81,3 +81,10 @@ baseScene.removeFullScreenStyles();
 document.getElementsByClassName('title-bar')[0].addEventListener('click', () => {
   baseScene.enterVR();
 })
+
+const changeText = () => {
+    const newTitleText = document.getElementById("newText").value;
+    const newTitleColor = document.getElementById("titleColor").value;
+    document.getElementsByClassName('title-bar')[0].style.color = newTitleColor;
+    document.getElementById("title-text").innerHTML = newTitleText;
+}
